@@ -1,0 +1,6 @@
+com/yourname/spotifytodeezer/service/SpotifyService.class
+com/yourname/spotifytodeezer/model/TransferResponse.class
+com/yourname/spotifytodeezer/model/Track.class
+com/yourname/spotifytodeezer/SpotifyToDeezerApplication.class
+com/yourname/spotifytodeezer/controller/SpotifyController.class
+com/yourname/spotifytodeezer/model/TransferRequest.class

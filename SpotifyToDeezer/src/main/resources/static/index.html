@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify to Deezer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Spotify -> Deezer Transfer</h1>
+    <p class="subtitle">Learning Spring Boot here</p>
+
+    <!-- API Configuration Section -->
+    <div class="card">
+        <h2>1. API Configuration</h2>
+        <div class="form-group">
+            <label>Spotify Client ID</label>
+            <input type="text" id="spotify-client-id" placeholder="Your Spotify Client ID">
+        </div>
+        <div class="form-group">
+            <label>Spotify Client Secret</label>
+            <input type="password" id="spotify-client-secret" placeholder="Your Spotify Client Secret">
+        </div>
+        <div class="form-group">
+            <label>Deezer Access Token (Dummy - Not used yet)</label>
+            <input type="password" id="deezer-access-token" placeholder="Will be used in Phase 2" disabled>
+        </div>
+        <p class="info-text">
+            <strong>Get Spotify credentials:</strong><br>
+            1. Go to <a href="https://developer.spotify.com/dashboard" target="_blank">Spotify Dashboard</a><br>
+            2. Create an app<br>
+            3. Copy Client ID and Client Secret
+        </p>
+    </div>
+
+    <!-- Playlist Fetch Section -->
+    <div class="card">
+        <h2>2. Fetch Spotify Playlist</h2>
+        <div class="form-group">
+            <label>Spotify Playlist URL</label>
+            <input type="text" id="spotify-playlist-url"
+                   placeholder="https://open.spotify.com/playlist/...">
+        </div>
+        <button id="fetch-playlist-btn" class="btn-primary">Fetch Playlist</button>
+        <div id="fetch-error" class="error"></div>
+    </div>
+
+    <!-- Track Selection Section -->
+    <div id="track-selection" class="card hidden">
+        <h2>3. Select Tracks</h2>
+        <div class="track-controls">
+            <button id="select-all-btn" class="btn-secondary">Select All</button>
+            <button id="deselect-all-btn" class="btn-secondary">Deselect All</button>
+            <span id="track-count"></span>
+        </div>
+        <div id="track-list"></div>
+    </div>
+
+    <!-- Transfer Section -->
+    <div id="transfer-section" class="card hidden">
+        <h2>4. Transfer Settings</h2>
+        <div class="form-group">
+            <label>Deezer Playlist Name (Dummy)</label>
+            <input type="text" id="deezer-playlist-name"
+                   placeholder="My Imported Playlist">
+        </div>
+        <button id="transfer-btn" class="btn-primary">Submit & Show JSON</button>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results-section" class="card hidden">
+        <h2>📋 Result (JSON)</h2>
+        <p class="info-text">
+            <strong>Output:</strong> This shows ISRC, Title, and Artist for selected tracks.<br>
+            We'll use this data to actually create a Deezer playlist!
+        </p>
+        <pre id="results-json"></pre>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
